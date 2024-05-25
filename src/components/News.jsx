@@ -23,7 +23,7 @@ const News = () => {
                 <h6 className="text-sm font-bold">{article.title}</h6>
                 <p className="text-xs font-medium text-gray-500">{article.source.name}</p>
               </div>
-              <img src={article.urlToImage} alt={'article image'} width={70} className="rounded-xl" />
+              <img src={article.urlToImage} alt={'article image'} width={100} className="rounded-xl" />
             </div>
           </a>
         </div>
