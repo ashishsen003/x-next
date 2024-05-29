@@ -25,6 +25,7 @@ const Input = () => {
             uploadImageToStorage()
         }
     }, [selectedFile])
+    console.log(imageFileUrl);
 
     const uploadImageToStorage = ()=>{
         setImageFileUploading(true)
@@ -35,24 +36,25 @@ const Input = () => {
         console.log(uploadTask);
         uploadTask.on(
             'state_changed',
-            (snapshot)=>{
-                const progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100
-                console.log('upload is ', progress + '% done');
+            (snapshot) => {
+              const progress =
+                (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              console.log('Upload is ' + progress + '% done');
             },
-            (error)=>{
-                console.log(error);
-                setImageFileUploading(false)
-                setImageFileUrl(null)
-                setSelectedFile(null)
+            (error) => {
+              console.error(error);
+              setImageFileUploading(false);
+              setImageFileUrl(null);
+              setSelectedFile(null);
             },
-            ()=>{
-                getDownloadURL(upload.snapshot.ref).then((downloadURL)=>{
-                    setImageFileUrl(downloadURL)
-                    setImageFileUploading(false)
-                })
+            () => {
+              getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                setImageFileUrl(downloadURL);
+                setImageFileUploading(false);
+              });
             }
-        )
-    }
+          );
+        }
 
     if(!session) return null
 
