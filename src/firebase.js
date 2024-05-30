@@ -8,14 +8,14 @@ import { getAnalytics } from "firebase/analytics";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_KEY,
-  authDomain: "x-next-62601.firebaseapp.com",
-  projectId: "x-next-62601",
-  storageBucket: "x-next-62601.appspot.com",
-  messagingSenderId: "747719794573",
-  appId: "1:747719794573:web:a1f49f598581860f5b27c4",
-  // measurementId: "G-153Z8D0RYM"
+  authDomain: "x-next-610fe.firebaseapp.com",
+  projectId: "x-next-610fe",
+  storageBucket: "x-next-610fe.appspot.com",
+  messagingSenderId: "475522578647",
+  appId: "1:475522578647:web:f46c7c3c882a4e700d1892",
+  measurementId: "G-BH1077BWBG"
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+// export const analytics = getAnalytics(app);

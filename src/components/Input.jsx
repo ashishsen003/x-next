@@ -17,15 +17,15 @@ const Input = () => {
         if(file){
             setSelectedFile(file)
             setImageFileUrl(URL.createObjectURL(file))
+          }
         }
-    }
-
-    useEffect(()=>{
-        if(selectedFile){
+        
+        useEffect(()=>{
+          if(selectedFile){
             uploadImageToStorage()
-        }
-    }, [selectedFile])
-    console.log(imageFileUrl);
+          }
+        }, [selectedFile])
+        console.log(imageFileUrl);
 
     const uploadImageToStorage = ()=>{
         setImageFileUploading(true)
@@ -33,7 +33,6 @@ const Input = () => {
         const fileName = new Date().getTime()+'-'+selectedFile.name
         const storageRef = ref(storage, fileName)
         const uploadTask = uploadBytesResumable(storageRef, selectedFile)
-        console.log(uploadTask);
         uploadTask.on(
             'state_changed',
             (snapshot) => {
@@ -77,3 +76,4 @@ const Input = () => {
 }
 
 export default Input
+
