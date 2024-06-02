@@ -1,17 +1,25 @@
-import {collection, getDocs, getFirestore, orderby, query} from 'firebase/firestore'
+import {collection, getDocs, getFirestore, orderBy, query} from 'firebase/firestore'
 import {app} from '../firebase'
 import React from 'react'
+import Post from './Post'
 
 const Feed = async () => {
     const db = getFirestore(app)
-    const q = query(collection(db,'posts'), orderby('timestamps', 'desc'))
+    const q = query(collection(db,'posts'), orderBy('timestamps', 'desc'))
     const querySnapshot = await getDocs(q)
     let data = []
     querySnapshot.forEach((doc)=>{
-        data.push({id: doc.id, })
+        data.push({id: doc.id, ...doc.data()})
     })
+    console.log(data);
   return (
-    <div>Feed</div>
+    <div>
+      {
+        data.map((post)=>{
+          <Post key={post.id} post={post} id={post.id} />
+        })
+      }
+    </div>
   )
 }
 
