@@ -40,7 +40,7 @@ const Input = () => {
       uploadImageToStorage();
     }
   }, [selectedFile]);
-  console.log(imageFileUrl);
+  // console.log(imageFileUrl);
 
   const uploadImageToStorage = () => {
     setImageFileUploading(true);
