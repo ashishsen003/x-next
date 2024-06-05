@@ -22,7 +22,7 @@ const Post = ({post, id}) => {
             <Link href={`/posts/${id}`}>
                 <img src={post?.image} className='rounded-2xl mr-2' />
             </Link>
-            <Icons />
+            <Icons id={id}/>
         </div>
     </div>
   )
