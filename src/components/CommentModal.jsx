@@ -64,6 +64,9 @@ const CommentModal = () => {
                   <div className='flex items-center justify-end pt-2.5'>
                     <button className='bg-blue-500 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50' disabled={input.trim()===''} onClick={sendComment}>Reply</button>
                   </div>
+                   <div className='flex items-center justify-end pt-2.5'>
+                    <button className='bg-blue-500 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50' disabled={input.trim()===''} onClick={sendComment}>Reply</button>
+                  </div>
                 </div>
             </div>
           </Modal>
