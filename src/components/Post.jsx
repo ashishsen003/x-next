@@ -4,7 +4,7 @@ import {HiDotsHorizontal} from 'react-icons/hi'
 import Icons from './Icons';
 
 const Post = ({post, id}) => {
-    console.log('post', post);
+    // console.log('post', post);
   return (
     <div className='flex p-3 border-b border-gray-200 hover:bg-gray-200'>
         <img src={post?.profileImg} alt="user-img" className='h-11 w-11 rounded-full mr-4' />

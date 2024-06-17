@@ -4,6 +4,7 @@ import React from 'react'
 import {HiArrowLeft} from 'react-icons/hi'
 import Link from 'next/link'
 import Post from '@/components/Post'
+import Comments from '@/components/Comments'
 
 const PostPage = async({params}) => {
   const db = getFirestore(app)
@@ -20,6 +21,7 @@ const PostPage = async({params}) => {
         <h2 className='sm:text-lg'>Back</h2>
       </div>
       <Post post={data} id={data.id} />
+      <Comments id={params.id} />
     </div>
   )
 }
