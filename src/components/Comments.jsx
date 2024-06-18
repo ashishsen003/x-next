@@ -22,6 +22,7 @@ const Comments = ({ id }) => {
       ),
       (snapshot) => {
         setComments(snapshot.docs);
+        console.log(snapshot.docs);
       }
     );
   }, [db, id]);
@@ -29,7 +30,9 @@ const Comments = ({ id }) => {
   return (
     <div>
       {comments.map((comment) => {
-        <Comment key={comment.id} comment={comment.data()} id={comment.id} />;
+        return (
+          <Comment key={comment.id} comment={comment.data()} id={comment.id} />
+        )
       })}
     </div>
   );

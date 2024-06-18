@@ -7,6 +7,7 @@ import Post from '@/components/Post'
 import Comments from '@/components/Comments'
 
 const PostPage = async({params}) => {
+  
   const db = getFirestore(app)
   let data = {}
   const querySnapshot = await getDoc(doc(db,'posts', params.id))
